@@ -1,0 +1,8 @@
+ID=4
+WS=6
+INT=5
+'='=8
+'public'=10
+';'=9
+'int'=7
+'static'=11

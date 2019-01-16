@@ -1,0 +1,97 @@
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://xsd.dbmssync.blackntan.com/DBSchema_v1.xsd"
+           xmlns="http://xsd.dbmssync.blackntan.com/DBSchema_v1.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DBSchema" type="ct_DBSchema"/>
+  <xs:complexType name="ct_DBSchema">
+    <xs:sequence>
+      <xs:element name="Tables" type="ct_Tables"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_Tables">
+    <xs:sequence>
+      <xs:element name="Table" type="ct_Table" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_Table">
+    <xs:sequence>
+      <xs:element name="SchemaName" type="xs:string" minOccurs="0"/>
+      <xs:element name="ObjectName" type="xs:string"/>
+      <xs:element name="Columns" type="ct_Columns"/>
+      <xs:element name="UniqueKeys" type="ct_UniqueKeys" minOccurs="0"/>
+      <xs:element name="ForeignKeys" type="ct_ForeignKeys" minOccurs="0"/>
+      <xs:element name="PrimaryKey" type="ct_PrimaryKey" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_Columns">
+    <xs:sequence>
+      <xs:element name="Column" type="ct_Column" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_Column">
+    <xs:sequence>
+      <xs:element name="ObjectName" type="xs:string"/>
+      <xs:element name="DataType" type="ct_DataType"/>
+      <xs:element name="NotNull" minOccurs="0"/>
+      <xs:element name="DefaultValue" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_DataType">
+    <xs:sequence>
+      <xs:element name="DataTypeName" type="xs:string"/>
+      <xs:element name="Length" type="xs:string" minOccurs="0"/>
+      <xs:element name="Precision" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_UniqueKeys">
+    <xs:sequence>
+      <xs:element name="UniqueKey" type="ct_UniqueKey" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_UniqueKey">
+    <xs:sequence>
+      <xs:element name="ObjectName" type="xs:string"/>
+      <xs:element name="ColumnName" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_ForeignKeys">
+    <xs:sequence>
+      <xs:element name="ForeignKey" type="ct_ForeignKey" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_ForeignKey">
+    <xs:sequence>
+      <xs:element name="ObjectName" type="xs:string"/>
+      <xs:element name="ReferencesSchemaName" type="xs:string"/>
+      <xs:element name="ReferencesTableName" type="xs:string"/>
+      <xs:element name="ColumnReference" type="ct_FkColumnRef" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_FkColumnRef">
+    <xs:sequence>
+      <xs:element name="ColumnName" type="xs:string"/>
+      <xs:element name="ReferencesColumnName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_PrimaryKey">
+    <xs:sequence>
+      <xs:element name="ObjectName" type="xs:string"/>
+      <xs:element name="ColumnName" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="IndexInfo" type="ct_IndexInfo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_IndexInfo">
+    <xs:sequence>
+      <xs:element name="Info" type="ct_NVP" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ct_NVP">
+    <xs:sequence>
+      <xs:element name="FieldName" type="xs:string"/>
+      <xs:choice>
+        <xs:element name="FieldValue" type="xs:string"/>
+        <xs:element name="SubInfo" type="ct_NVP" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

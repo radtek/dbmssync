@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.blackntan.dbmssync.test.AntlrTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 29.969 sec <<< FAILURE!
+testTableParse(com.blackntan.dbmssync.test.AntlrTest)  Time elapsed: 29.652 sec  <<< ERROR!
+java.lang.NullPointerException
+	at com.blackntan.dbmssync.core.DBMSXmlSchemaAdapter.determineAndCreateAdapterForConfig(DBMSXmlSchemaAdapter.java:84)
+	at com.blackntan.dbmssync.core.DBMSXmlSchemaAdapter.getInstance(DBMSXmlSchemaAdapter.java:27)
+	at com.blackntan.dbmssync.test.AntlrTest.testTableParse(AntlrTest.java:151)
+

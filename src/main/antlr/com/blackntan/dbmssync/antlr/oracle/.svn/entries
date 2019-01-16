@@ -1,0 +1,40 @@
+8
+
+dir
+805
+svn://blackntan.com/svn/dbmssync/trunk/src/main/antlr/com/blackntan/dbmssync/antlr/oracle
+svn://blackntan.com/svn
+
+
+
+2008-07-07T06:13:53.724695Z
+804
+jcolson
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+01ab539c-4507-0410-b04e-cf37ee354b3b
+
+TableDDL.g
+file
+806
+
+
+
+2008-07-07T13:02:21.000000Z
+d1d941dd5cc92c2033f92b3a786fdb07
+2008-07-07T13:31:08.512033Z
+806
+jcolson
+

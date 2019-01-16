@@ -1,0 +1,40 @@
+8
+
+dir
+805
+svn://blackntan.com/svn/dbmssync/trunk/src/main/xsd
+svn://blackntan.com/svn
+
+
+
+2008-07-07T05:49:44.374785Z
+803
+jcolson
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+01ab539c-4507-0410-b04e-cf37ee354b3b
+
+DatabaseSchema_v1.xsd
+file
+
+
+
+
+2008-07-07T12:30:52.000000Z
+1bedeac78d83c516384368f038658aa2
+2008-07-07T05:49:44.374785Z
+803
+jcolson
+
